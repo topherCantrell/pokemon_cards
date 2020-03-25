@@ -34,6 +34,33 @@ class CardDB:
     def save(self):
         with open(self._fname,'w') as f:
             f.write(json.dumps(self._db,indent=2))
+            
+    def get_card(self,id):
+        if id[-1]=='H' or id[-1]=='F':
+            id = id[0:-1]
+        return self._db['cards'][id]
+            
+    def get_all_cards(self):
+        cards = self._db['cards']
+        owned_nums = []
+        
+        # Cards come in packs and decks
+        
+        for pack in self._db['packs']:
+            owned_nums = owned_nums + self._db['packs'][pack]
+            
+        for deck in self._db['decks']:
+            owned_nums = owned_nums + self._db['decks'][deck]['cards']
+            
+        ret = {}
+        
+        for ow in owned_nums:
+            if ow in ret:
+                ret[ow]+=1
+            else:
+                ret[ow]=1
+        
+        return ret
 
 if __name__ == '__main__':
     db = CardDB('../sword_shield.json')
