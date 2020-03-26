@@ -1,4 +1,4 @@
-{ 
+{
   "decks": {
     "815": {
       "id": 815,
@@ -198,7 +198,7 @@
         "GRASS"
       ]
     }
-  },  
+  },
   "cards": {
     "1": {
       "id": 1,
@@ -1155,222 +1155,191 @@
       "id": 156,
       "name": "Air Balloon",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "157": {
       "id": 157,
       "name": "Bede",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Uncommon"
     },
     "158": {
       "id": 158,
       "name": "Big Charm",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "159": {
       "id": 159,
       "name": "Crushing Hammer",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "160": {
       "id": 160,
       "name": "Energy Retrieval",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "161": {
       "id": 161,
       "name": "Energy Search",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "162": {
       "id": 162,
       "name": "Energy Switch",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "163": {
       "id": 163,
       "name": "Evolution Incense",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "164": {
       "id": 164,
       "name": "Great Ball",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "165": {
       "id": 165,
       "name": "Hop",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Uncommon"
     },
     "166": {
       "id": 166,
       "name": "Hyper Potion",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "167": {
       "id": 167,
       "name": "Lucky Egg",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "168": {
       "id": 168,
       "name": "Lum Berry",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "169": {
       "id": 169,
       "name": "Marnie",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Holo"
     },
     "170": {
       "id": 170,
       "name": "Metal Saucer",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "171": {
       "id": 171,
       "name": "Ordinary Rod",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "172": {
       "id": 172,
       "name": "Pal Pad",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "173": {
       "id": 173,
       "name": "Poke Kid",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Uncommon"
     },
     "174": {
       "id": 174,
       "name": "Pokegear 3.0",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "175": {
       "id": 175,
       "name": "Pokemon Catcher",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "176": {
       "id": 176,
       "name": "Pokemon Center Lady",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Uncommon"
     },
     "177": {
       "id": 177,
       "name": "Potion",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "178": {
       "id": 178,
       "name": "Professor's Research",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Holo"
     },
     "179": {
       "id": 179,
       "name": "Quick Ball",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "180": {
       "id": 180,
       "name": "Rare Candy",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "181": {
       "id": 181,
       "name": "Rotom Bike",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "182": {
       "id": 182,
       "name": "Sitrus Berry",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "183": {
       "id": 183,
       "name": "Switch",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "184": {
       "id": 184,
       "name": "Team Yell Grunt",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Uncommon"
     },
     "185": {
       "id": 185,
       "name": "Vitality Band",
       "type": "ITEM",
-      "color": "",
       "rarity": "Uncommon"
     },
     "186": {
       "id": 186,
       "name": "Aurora Energy",
-      "type": "ENERGY",
-      "color": "NONE",
+      "type": "SPECIAL ENERGY",
       "rarity": "Uncommon"
     },
     "187": {
       "id": 187,
-      "name": "Dhelmise",      
+      "name": "Dhelmise",
       "name_modifier": "V",
       "color": "GRASS",
       "rarity": "Rare Ultra"
@@ -1456,28 +1425,24 @@
       "id": 199,
       "name": "Bede",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "200": {
       "id": 200,
       "name": "Marnie",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "201": {
       "id": 201,
       "name": "Professor's Research",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "202": {
       "id": 202,
       "name": "Team Yell Grunt",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "203": {
@@ -1512,28 +1477,24 @@
       "id": 207,
       "name": "Bede",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "208": {
       "id": 208,
       "name": "Marnie",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "209": {
       "id": 209,
       "name": "Professor's Research",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "210": {
       "id": 210,
       "name": "Team Yell Grunt",
       "type": "SUPPORTER",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "211": {
@@ -1554,28 +1515,24 @@
       "id": 213,
       "name": "Air Balloon",
       "type": "ITEM",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "214": {
       "id": 214,
       "name": "Metal Saucer",
       "type": "ITEM",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "215": {
       "id": 215,
       "name": "Ordinary Rod",
       "type": "ITEM",
-      "color": "",
       "rarity": "Rare Secret"
     },
     "216": {
       "id": 216,
       "name": "Quick Ball",
       "type": "ITEM",
-      "color": "",
       "rarity": "Rare Secret"
     }
   }

@@ -1,19 +1,53 @@
 from card_db import CardDB
 
-db = CardDB('../sword_shield.json')
 
-box = db._db['booster_boxes'][0]
-
-for pack_id in box:
-    pack = db._db['packs'][str(pack_id)]
-    for card_id in pack:
-        org_id = card_id
-        if card_id in CardDB.ENERGY_TYPES:
-            print(card_id)
+def show_discards():
+    db = CardDB()
+    
+    cards = db.get_all_cards()
+    
+    slots = []
+    for _ in range(250):
+        slots.append([])
+    
+    for ct in cards:
+        if ct in db.ENERGY_TYPES:
+            continue          
+        if ct[-1]=='F' or ct[-1]=='H':        
+            slots[int(ct[0:-1])].append('*')
+        else:
+            slots[int(ct)].append('.')
+        
+    total_discard = 0
+    for i in range(1,250):
+        contents = slots[i]
+        if len(contents)<=4:
             continue
-        if card_id[-1]=='H' or card_id[-1]=='F':
-            card_id = card_id[0:-1]
-        card = db._db['cards'][str(card_id)]
-        print(f'{org_id} {card["name"]}')
-
-#print(box)
+        
+        # Sort the sleeve
+        
+        normals = 0
+        foils = 0
+        
+        for c in contents:
+            if c=='*':
+                foils += 1
+            else:
+                normals += 1
+                
+        ct = ''
+        if foils:
+            ct='*'
+            foils -=1
+        for _ in range(normals):
+            ct = ct + '.'
+        for _ in range(foils):
+            ct = ct + '*'
+           
+        #print(f'{i} {ct}')
+        print(f'{i} {ct[4:]}')
+        total_discard += len(ct[4:])
+    
+    print(total_discard)
+    
+show_discards()
