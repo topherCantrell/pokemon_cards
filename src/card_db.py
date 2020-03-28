@@ -48,6 +48,11 @@ class CardDB:
             id = id[0:-1]
         return self._db['cards'][id]
     
+    def get_number(self,id):
+        if id[-1]=='H' or id[-1]=='F':
+            id = id[0:-1]
+        return int(id)
+    
     def count_cards(self,cards):
         ret = {}
         for card in cards:
@@ -57,7 +62,7 @@ class CardDB:
                 ret[card] = 1
         return ret
             
-    def get_all_cards(self):        
+    def get_all_cards(self,not_packs=[]):        
         
         owned_nums = []
         
@@ -67,6 +72,8 @@ class CardDB:
             owned_nums += self.cards['decks'][deck_id]['cards']
             
         for pack_id in self.collection['packs']:
+            if pack_id in not_packs or int(pack_id) in not_packs:
+                continue
             owned_nums += self.collection['packs'][pack_id]
         
         # TODO: Minus the ones in collection['gone']
