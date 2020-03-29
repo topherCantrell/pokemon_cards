@@ -57,12 +57,12 @@ def get_sleeves(cards):
 def added_packs(pack_ids=[]):
 
     cards = db.get_all_cards(not_packs=pack_ids)    
-    alb_before = get_album(cards)
+    alb_before = get_sleeves(cards)
     
     cards = db.get_all_cards()    
-    alb_after = get_album(cards)
+    alb_after = get_sleeves(cards)
     
-    for i in range(1,250):
+    for i in range(1,204):
         ca = alb_after[i]
         cb = alb_before[i]
         
@@ -139,22 +139,22 @@ def show_origins(card_id):
     
     
         
-#added_packs([41,42,43,44,45])
+added_packs([82,83,84,85])
 
 #show_albumn()
 
 #show_discards()
 
-cards = db.get_all_cards()
-show_energies(cards)
+#cards = db.get_all_cards()
+#show_energies(cards)
 
 #album = get_album(cards)
-print(len(cards))
+#print(len(cards))
 
-show_origins("20")
-show_origins("20F")
+#show_origins("20")
+#show_origins("20F")
 
-show_origins("46")
-show_origins("46F")
+#show_origins("46")
+#show_origins("46F")
 
 #print(get_energies(cards))
