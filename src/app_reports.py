@@ -85,10 +85,10 @@ def get_album_sleeves(cards):
 
 def added_packs(pack_ids=[]):
 
-    cards = db.get_all_cards(not_packs=pack_ids)    
+    cards = db.get_all_owned_cards(not_packs=pack_ids)    
     alb_before = get_album_sleeves(cards)
     
-    cards = db.get_all_cards()    
+    cards = db.get_all_owned_cards()    
     alb_after = get_album_sleeves(cards)
     
     for i in range(1,204):
@@ -177,7 +177,7 @@ def show_origins(card_id):
     print(f'Total {card_id} cards: {total}')
     
 def show_needed(rarity):
-    cards = db.get_all_cards()
+    cards = db.get_all_owned_cards()
     album = get_album_sleeves(cards)
     # TODO: albums should be lists ... not dictionaries
     
@@ -191,11 +191,11 @@ def show_needed(rarity):
         print(f'{i} {co}')    
         
     
-show_needed('Common')    
+#show_needed('Common')    
 
 #show_albumn()
         
-#added_packs([86,87,88,89])
+added_packs([90,91])
 
 #show_albumn()
 

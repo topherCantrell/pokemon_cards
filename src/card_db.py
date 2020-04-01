@@ -1,29 +1,7 @@
 import json
 
 class CardDB:
-    
-    '''
-    DB Format:
-    {
-        "booster_boxes" : [ [1,2,3,4,...] ],  # List of pack-ids in the box
-        "booster_singles" : [5,6,...], # List of single pack-ids
-        "packs" : {
-            "1" : ['1','2F','55','28F'] # Strings to include "FOIL/HOLO" designators or ENERGY type            
-        },
-        "decks" : {
-            "803" : {
-                "name" : "blahblah",
-                "cards" : ['1','2',...]
-            }
-        },
-        "cards" : {
-            "1" : {
-                # Lots of other stuff
-            }
-        }
-    }    
-    '''
-    
+           
     ENERGY_TYPES = ['METAL','WATER','ELECTRIC','FIRE','WATER','PSYCHIC','FIGHT','DARK','GRASS']
     
     SET_FILENAME = '../sword_shield.json'
@@ -43,42 +21,46 @@ class CardDB:
         with open(CardDB.SET_FILENAME,'w') as f:
             f.write(json.dumps(self.cards,indent=2))
             
-    def get_card(self,id):
+    #
+            
+    def get_card_info(self,id):
         if id[-1]=='H' or id[-1]=='F':
             id = id[0:-1]
-        return self._db['cards'][id]
+        return self.cards[id]
     
-    def get_number(self,id):
+    def get_number_from_id(self,id):
         if id[-1]=='H' or id[-1]=='F':
             id = id[0:-1]
         return int(id)
     
-    def count_cards(self,cards):
+    def count_cards(self,card_ids):
         ret = {}
-        for card in cards:
+        for card in card_ids:
             if card in ret:
                 ret[card] += 1
             else:
                 ret[card] = 1
         return ret
             
-    def get_all_cards(self,not_packs=[]):        
+    def get_all_owned_cards(self,not_packs=[],not_decks=[],skip_gone=True):        
         
-        owned_nums = []
+        owned_ids = []
         
         # From decks
         
         for deck_id in self.collection['decks']:
-            owned_nums += self.cards['decks'][deck_id]['cards']
+            if deck_id in not_decks or int(deck_id) in not_decks:
+                continue
+            owned_ids += self.cards['decks'][deck_id]['cards']
             
         for pack_id in self.collection['packs']:
             if pack_id in not_packs or int(pack_id) in not_packs:
                 continue
-            owned_nums += self.collection['packs'][pack_id]
+            owned_ids += self.collection['packs'][pack_id]
         
         # TODO: Minus the ones in collection['gone']
         
-        return owned_nums
+        return owned_ids
 
 if __name__ == '__main__':
     db = CardDB()
