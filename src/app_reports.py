@@ -40,11 +40,15 @@ def get_album_sleeves(cards):
     for ct in cards:
         # Energy cards don't go in an album
         if ct in db.ENERGY_TYPES:
-            continue          
-        if ct[-1]=='F':
-            slots[int(ct[0:-1])].append('F')
+            continue                  
+        elif ct[-1]=='X':
+            slots[int(ct[0:-1])].append('X')
+        elif ct[-1]=='V':
+            slots[int(ct[0:-1])].append('V')
         elif ct[-1]=='H':        
             slots[int(ct[0:-1])].append('H')
+        elif ct[-1]=='F':
+            slots[int(ct[0:-1])].append('F')        
         else:
             slots[int(ct)].append('+')
         
@@ -57,16 +61,28 @@ def get_album_sleeves(cards):
         normals = 0
         foils = 0
         holos = 0
+        v = 0
+        vmax = 0
         
         for c in contents:
             if c=='H':
                 holos +=1
             elif c=='F':
                 foils += 1
+            elif c=='V':
+                v += 1
+            elif c=='X':
+                vmax += 1
             else:
                 normals += 1
                 
         ct = ''
+        if v:
+            ct=ct + 'V'
+            v -=1
+        if vmax:
+            ct=ct + 'X'
+            vmax -=1
         if foils:
             ct=ct + 'F'
             foils -=1
@@ -79,6 +95,10 @@ def get_album_sleeves(cards):
             ct = ct + 'F'
         for _ in range(holos):
             ct = ct + 'H'
+        for _ in range(v):
+            ct = ct + 'V'
+        for _ in range(vmax):
+            ct = ct + 'X'
             
         ret[i] = ct
     return ret
@@ -111,7 +131,7 @@ def added_packs(pack_ids=[]):
 def show_albumn():
     total = 0
     total2 = 0
-    cards = db.get_all_cards()    
+    cards = db.get_all_owned_cards()    
     alb = get_album_sleeves(cards)
     for i in range(1,len(alb)):
         co = alb[i]
@@ -191,11 +211,12 @@ def show_needed(rarity):
         print(f'{i} {co}')    
         
     
-#show_needed('Common')    
+#show_needed('Common')
+#print()    
 
 #show_albumn()
         
-added_packs([90,91])
+added_packs([98,99,100])
 
 #show_albumn()
 
