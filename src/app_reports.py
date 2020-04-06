@@ -216,7 +216,7 @@ def show_needed(rarity):
 
 #show_albumn()
         
-added_packs([98,99,100])
+added_packs([46,47,48,49])
 
 #show_albumn()
 
