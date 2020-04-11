@@ -103,7 +103,7 @@ def get_album_sleeves(cards):
         ret[i] = ct
     return ret
 
-def added_packs(pack_ids=[]):
+def added_packs(pack_ids=[50,51,52,53, 105,106,107,108]):
 
     cards = db.get_all_owned_cards(not_packs=pack_ids)    
     alb_before = get_album_sleeves(cards)
@@ -216,7 +216,7 @@ def show_needed(rarity):
 
 #show_albumn()
         
-added_packs([46,47,48,49,101,102,103,104])
+added_packs([50,51,52,53,101,102,103,104])
 
 #show_albumn()
 
