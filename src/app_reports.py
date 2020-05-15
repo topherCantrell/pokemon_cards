@@ -211,12 +211,13 @@ def show_needed(rarity):
         print(f'{i} {co}')    
         
     
+print('-----')
 show_needed('Common')
-print()    
+print('-----')
 
 #show_albumn()
         
-added_packs([58,59,60,61,62,63])
+added_packs([64,65,66,67,68])
 
 #show_albumn()
 
