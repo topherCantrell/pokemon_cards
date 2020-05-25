@@ -217,7 +217,7 @@ print('-----')
 
 #show_albumn()
         
-added_packs([64,65,66,67,68])
+added_packs([73,74,75,76, 77,78,79,80,81])
 
 #show_albumn()
 
